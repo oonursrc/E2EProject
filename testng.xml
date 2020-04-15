@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+	<listeners>
+		<listener class-name="Academy.Listeners"></listener>
+		<listener class-name="resources.ExtentReporterNG"></listener>
+	</listeners>
+
+
+	<!-- Separated tests for closing browsers -->
+
+	<test thread-count="5" name="ValidateNavigationBarTest">
+		<classes>
+			<class name="Academy.ValidateNavigationBar" />
+		</classes>
+	</test><!-- Test -->
+
+	<test thread-count="5" name="ValidateTitleTest">
+		<classes>
+			<class name="Academy.ValidateTitle" />
+		</classes>
+	</test><!-- Test -->
+
+	<test thread-count="5" name="HomePageTest">
+		<classes>
+			<class name="Academy.HomePage" />
+		</classes>
+
+
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

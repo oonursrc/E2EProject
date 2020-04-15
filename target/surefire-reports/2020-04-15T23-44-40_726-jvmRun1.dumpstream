@@ -1,0 +1,6 @@
+# Created at 2020-04-15T23:45:40.107
+Unresolved compilation problems: 
+	Name clash: The method generateReport(List<XmlSuite>, List<ISuite>, String) of type ExtentReporterNG has the same erasure as generateReport(List<XmlSuite>, List<ISuite>, String) of type IReporter but does not override it
+	XmlSuite cannot be resolved to a type
+
+

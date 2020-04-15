@@ -1,0 +1,6 @@
+23:52:52.144 [main] INFO  Academy.ValidateTitle - Driver Initialized for ValidateTitle
+23:52:56.535 [main] INFO  Academy.ValidateTitle - Navigate to HomePage for ValidateTitle
+23:52:59.892 [main] INFO  Academy.ValidateTitle - Driver Initialized for HomePage
+23:53:04.315 [main] INFO  Academy.ValidateTitle - Navigate to HomePage for Login
+23:53:18.381 [main] INFO  Academy.ValidateTitle - Login tried for username:asd@asd.com, password:1234
+23:53:21.138 [main] INFO  Academy.ValidateTitle - Navigate to HomePage for Login

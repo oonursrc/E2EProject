@@ -1,0 +1,6 @@
+23:53:31.614 [main] INFO  Academy.ValidateTitle - Login tried for username:qwerty@asd.com, password:9876
+00:14:39.908 [main] INFO  Academy.ValidateTitle - Driver Initialized for ValidateNavigationBar
+00:14:45.181 [main] INFO  Academy.ValidateTitle - Navigate to HomePage for ValidateNavigationBar
+00:14:45.553 [main] INFO  Academy.ValidateTitle - Navigationbar validated
+00:15:04.617 [main] INFO  Academy.ValidateTitle - Driver Initialized for ValidateTitle
+00:15:12.317 [main] INFO  Academy.ValidateTitle - Navigate to HomePage for ValidateTitle

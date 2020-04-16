@@ -12,6 +12,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 
 
@@ -22,8 +23,11 @@ public class Base {
 
 	public WebDriver initializeDriver() throws IOException {
 
-		String probPath = "C:\\Users\\z003srtv\\E2EProject\\src\\main\\java\\resources\\data.properties";
-		String chromeDriverLocation = "C:\\Users\\z003srtv\\Documents\\SeleniumDocs\\chromedriver_win32\\chromedriver.exe";
+		//gives project path. to avoid hardcode use this.
+		//System.getProperty("user.dir")
+
+		String probPath = System.getProperty("user.dir")+"\\src\\main\\java\\resources\\data.properties";
+		String chromeDriverLocation = System.getProperty("user.dir")+"\\src\\main\\java\\resources\\chromedriver.exe";
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream(probPath);
 
@@ -38,9 +42,14 @@ public class Base {
 		
 		// chrome
 
-		if (browserName.equals("chrome") ) {
+		if (browserName.contains("chrome")) {
 
 			System.setProperty("webdriver.chrome.driver", chromeDriverLocation);
+			ChromeOptions options = new ChromeOptions();
+
+			if (browserName.contains("headless")) {
+				options.addArguments("headless"); // run without opening browser
+			}
 
 			driver = new ChromeDriver();
 
@@ -62,7 +71,7 @@ public class Base {
 	
 	public void getScreenshot(String result) throws IOException {
 		File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src, new File("C:\\Users\\z003srtv\\E2EProject\\screenshots\\"+result+"_screenshot.png"));
+		FileUtils.copyFile(src, new File(System.getProperty("user.dir")+"\\screenshots\\"+result+"_screenshot.png"));
 	}
 
 }

@@ -15,7 +15,7 @@ import resources.Base;
 public class ValidateTitle extends Base {
 
 	public static Logger log = LogManager.getLogger(ValidateTitle.class.getName());
-
+	LandingPage l;
 	@BeforeTest
 	public void initialize() throws IOException {
 		driver = initializeDriver();
@@ -27,11 +27,17 @@ public class ValidateTitle extends Base {
 	@Test
 	public void validateAppTitle() throws IOException {
 
-		LandingPage l = new LandingPage(driver);
-
 		Assert.assertEquals(l.getTitle().getText(), "FEATURED COURSES1");
 		log.info("FEATURED COURSES test message validated");
 	}
+	
+	@Test
+	public void validateHeader() throws IOException {
+
+		Assert.assertEquals(l.getHeader().getText(), "AN ACADEMY TO LEARN EVERYTHING ABOUT TESTING");
+		log.info("Header test message validated");
+	}
+	
 
 	@AfterTest
 	public void teardown() {

@@ -14,9 +14,9 @@ public class LoginPage {
 	}
 	
 	
-	By email= By.cssSelector("[id='user_email']");
-	By password= By.cssSelector("[type='password']");
-	By login= By.cssSelector("[value='Log In']");
+	private By email= By.cssSelector("[id='user_email']");
+	private By password= By.cssSelector("[type='password']");
+	private By login= By.cssSelector("[value='Log In']");
 
 	public WebElement getEmail() {
 		return driver.findElement(email);

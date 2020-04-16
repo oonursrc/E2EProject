@@ -14,10 +14,10 @@ public class LandingPage {
 	}
 	
 	
-	By signin= By.cssSelector("a[href*='sign_in']");
-	By title= By.cssSelector(".text-center>h2");
-	By navbar= By.cssSelector(".nav.navbar-nav.navbar-right>li>a");
-	
+	private By signin= By.cssSelector("a[href*='sign_in']");
+	private By title= By.cssSelector(".text-center>h2");
+	private By navbar= By.cssSelector(".nav.navbar-nav.navbar-right>li>a");
+	private By header= By.cssSelector("div[class*='video-banner']h3");
 	
 
 	public WebElement getLogin() {
@@ -30,6 +30,10 @@ public class LandingPage {
 	
 	public WebElement getNavigationbar() {
 		return driver.findElement(navbar);
+	}
+	
+	public WebElement getHeader() {
+		return driver.findElement(header);
 	}
 
 }

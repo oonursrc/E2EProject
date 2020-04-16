@@ -27,8 +27,15 @@ public class Base {
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream(probPath);
 
-		prop.load(fis);
-		String browserName = prop.getProperty("browser");
+		//mvn test -Dbrowser=chrome
+		
+		// get browser as parameter
+		String browserName= System.getProperty("browser");
+		
+		//get browser name from properties manually
+		//String browserName = prop.getProperty("browser");
+		
+		
 		// chrome
 
 		if (browserName.equals("chrome") ) {

@@ -30,6 +30,9 @@ public class HomePage extends Base {
 		log.info("Navigate to HomePage for Login");
 
 		LandingPage l = new LandingPage(driver);
+		if(l.getPopupSize().size()>0) {
+			l.getPopup().click();
+		}
 		l.getLogin().click();
 
 		LoginPage lp = new LoginPage(driver);

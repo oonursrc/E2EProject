@@ -14,8 +14,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-
-
 public class Base {
 
 	public static WebDriver driver;
@@ -23,23 +21,24 @@ public class Base {
 
 	public WebDriver initializeDriver() throws IOException {
 
-		//gives project path. to avoid hardcode use this.
-		//System.getProperty("user.dir")
+		// gives project path. to avoid hardcode use this.
+		// System.getProperty("user.dir")
 
-		String probPath = System.getProperty("user.dir")+"\\src\\main\\java\\resources\\data.properties";
-		String chromeDriverLocation = System.getProperty("user.dir")+"\\src\\main\\java\\resources\\chromedriver.exe";
+		String probPath = System.getProperty("user.dir") + "\\src\\main\\java\\resources\\data.properties";
+		String chromeDriverLocation = System.getProperty("user.dir") + "\\src\\main\\java\\resources\\chromedriver.exe";
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream(probPath);
 
-		//mvn test -Dbrowser=chrome
-		
+		prop.load(fis);
+
+		// mvn test -Dbrowser=chrome
+
 		// get browser as parameter
-		String browserName= System.getProperty("browser");
-		
-		//get browser name from properties manually
-		//String browserName = prop.getProperty("browser");
-		
-		
+		String browserName = System.getProperty("browser");
+
+		// get browser name from properties manually
+		// String browserName = prop.getProperty("browser");
+
 		// chrome
 
 		if (browserName.contains("chrome")) {
@@ -63,15 +62,16 @@ public class Base {
 		else if (browserName.equals("IE")) {
 
 		}
-		
+
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
 
 	}
-	
+
 	public void getScreenshot(String result) throws IOException {
-		File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src, new File(System.getProperty("user.dir")+"\\screenshots\\"+result+"_screenshot.png"));
+		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(src,
+				new File(System.getProperty("user.dir") + "\\screenshots\\" + result + "_screenshot.png"));
 	}
 
 }
